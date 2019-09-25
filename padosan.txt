@@ -1,0 +1,56 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int** arr, row;
+void initialise() {
+	cout << "Enter how many squares\n";
+	cin >> row;
+	arr = new int*[row];
+	for (int i = 0; i < row; ++i)
+		arr[i] = new int[8];
+}
+void takeArray() {
+	for (int i = 0;i < row;i++) {
+		for (int j = 0;j < 8;j++) {
+			cin >> arr[i][j];
+		}
+	}
+}
+void FindAdjacentSquare() {
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0;j < 8;j++) {
+
+			for (int k = 0;k < row;k++) {
+
+				for (int l = 0;l < 8;l=l+2) {
+
+					/*if (arr[i][j] == arr[k][l]) {
+						cout<<""
+
+					}*/
+					cout << "K and l " << k << l << endl;
+
+				}
+				cout << k;
+				cout << "\n";
+
+			}
+		}
+	}
+}
+
+void display() {
+	for (int i = 0;i < row;i++) {
+		for (int j = 0;j < 8;j++) {
+			cout << arr[i][j];
+		}
+		cout << "\n";
+	}
+}
+void main() {
+	initialise();
+	takeArray();
+	FindAdjacentSquare();
+	//display();
+}
