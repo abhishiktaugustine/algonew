@@ -3,23 +3,42 @@ using namespace std;
 
 int square(int);
 void calculation(int);
-int  check=0;
-
+int  check = 0;
+int num, v1, i,num2,num3;
+int brr[200], num4;
 int main()
 {
-	int num, v1, i;
-	cout << "enter the starting number";
-	cin >> num;
-	check++;
 	
+	cin >> num;
+	cin >> num2;
+	num3 = num2 - num;
+	for (int k = 0; k <= num3; k++)
+	{
+		brr[k]=num;
+		num++;
+	}
+	for (int k = 0; k <= num3; k++) {
+
+		num = brr[k];
+		num4 = brr[k];
+
+		check++;
+
 		if (num < 10)
 		{
 			v1 = square(num);
 			calculation(v1);
+
 		}
-		else
+		else{
+		
 			calculation(num);
+}
+
+		num++;
+		
 	}
+}
 
 
 int square(int q) {
@@ -27,29 +46,40 @@ int square(int q) {
 	res = q * q;
 	check++;
 	return res;
-	}
+}
 
 void calculation(int b) {
 
 	int temp, arr[100], i{}, sum = 0;
-	
+
 	while (b != 0)
-		{
+	{
 		temp = b;
 		b = b % 10;
 		arr[i] = b;
 		sum = sum + (arr[i] * arr[i]);
 		i++;
 		b = temp / 10;
-		} 
-	 check++;
+	}
+	check++;
 
 	if (sum == 1)
 	{
-		cout << "Number is happy\n";
+
+		cout << num4 << " ";
 		cout << check << endl;
+		check = 0;
+
 	}
-	else 		
-			calculation(sum);
-}
+	else if(check==10)
+	{
+		check=0;
+		
+	}
+	
+	else{
+		calculation(sum);
+				}
+ }
+
 
