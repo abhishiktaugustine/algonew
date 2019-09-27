@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+int brr[10], term=0;
+
+int main() {
+    int	arr[10], i, j, num=0, n, countt=0, x=0,temp;
+	cout << "enter the number" << endl;
+	cin >> n;
+	while (n != 0) {
+		temp = n;
+		n = n % 10;
+		arr[x] = n;
+		x++;
+		countt++;
+		n = temp / 10;
+
+	}
+	
+	for (int i = 0; i < x; i++)
+	{	
+		for (j = 0; j < i; j++) {
+			if (arr[i] == arr[j])
+				break;
+		}
+
+		if (i == j) {
+			brr[term] = arr[i];
+			term++;
+		}
+	}
+
+	for (i = 0; i < term; i++) {
+		num = 0;
+		for ( j = 0; j < countt; j++)
+		{
+			if (brr[i] == arr[j]) {
+				num++;
+			}
+		}cout << brr[i]<<" "<<num<<endl;
+	}
+	
+	
+	return 0;
+}

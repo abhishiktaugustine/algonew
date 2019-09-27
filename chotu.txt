@@ -1,0 +1,44 @@
+#include<iostream>
+#include<string>
+#include<cstring>
+using namespace std;
+
+int main()
+{
+	string input,input1;
+	int size, i, arr[100], x = 0, term = 0, min = 100, z=0;
+	cout << "Enter string \n";
+	cin >> input;
+	size = input.length();
+	for (i = 0; i < size; i++) {
+
+		if (input[i] == '0') {
+			term = 0;
+			continue;
+		}
+
+
+		if (input[i] == '1') {
+			term++;
+			{
+				if (input[i + 1] == '1') 
+					continue;
+				
+			}
+			if (term > x)
+			{
+				x = term;
+			}
+		}
+	
+}
+	
+	if (term < 1)
+		cout << "X:" << -1;
+	else
+	cout << "X :" << " " << x << endl;
+
+	
+	
+	return 0;
+}
